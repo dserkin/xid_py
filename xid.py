@@ -150,7 +150,7 @@ class Xid(object):
         return self.string() > arg.string()
 
     @classmethod
-    def from_string(cls, s):
+    def from_string(cls, s: string):
         # type: (str) -> Xid
         val = base32hex.b32decode(s.upper())
         value_check = [0 <= x < 255 for x in val]
