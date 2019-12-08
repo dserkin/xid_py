@@ -27,6 +27,7 @@ TestXids = [
     }
 ]
 
+
 class TestXid(unittest.TestCase):
     def test_no_duplicates(self):
         collect = []
@@ -45,10 +46,10 @@ class TestXid(unittest.TestCase):
         self.assertEqual(x.string(), y.string())
 
     def test_xid_always_reversible(self):
-        for i in range(1000):
-            s = Xid().string()
-            self.assertEqual(Xid.from_string(s).string(), s)
-
+        for i in range(50):
+            v = Xid()
+            s = v.string()
+            self.assertEqual(Xid.from_string(s).value, v.value)
 
     def test_timestamp(self):
         for x in TestXids:
@@ -57,7 +58,7 @@ class TestXid(unittest.TestCase):
     def test_machine(self):
         for x in TestXids:
             self.assertEqual(x.get('xid').machine(), x.get('machine'))
-            
+
     def test_pid(self):
         for x in TestXids:
             self.assertEqual(x.get('xid').pid(), x.get('pid'))
