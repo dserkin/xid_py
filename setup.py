@@ -13,13 +13,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="xid-py",
-    version="1.1",
+    version="1.1.0",
     author="Darwin Smith II",
     author_email="pythonxid@dwin.fastmail.com",
     description="Python implementation of XID globally unique id generator",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/dwin/python_xid",
+    url="https://github.com/dwin/xid-py",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

@@ -1,5 +1,7 @@
 # XID Globally Unique ID Generator
 
+[![PyPI version](https://badge.fury.io/py/xid-py.svg)](https://badge.fury.io/py/xid-py)
+
 > This project is a python implementation of the Go Lang library found here: [https://github.com/rs/xid](https://github.com/rs/xid). This is a fork of the project found at [https://github.com/graham/python_xid](https://github.com/graham/python_xid) using Flake8 for linting for publishing on PyPi for use with Python 3. Python 2.x is not supported.
 
 __I've included the ReadMe from that project here (with some modifications for python).__
@@ -65,7 +67,7 @@ References:
 ## Install
 
 ```bash
-easy_install python_xid
+pip3 install "xid-py"
 ```
 ## Usage
 
@@ -88,4 +90,4 @@ guid.counter()
 
 ## Licenses
 
-All source code is licensed under the [MIT License](https://raw.github.com/dwin/python_xid/master/LICENSE).
+All source code is licensed under the [MIT License](https://raw.github.com/dwin/xid-py/master/LICENSE).
