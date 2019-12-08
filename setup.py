@@ -1,5 +1,5 @@
 # Always prefer setuptools over distutils
-from setuptools import setup, find_packages
+import setuptools
 
 # To use a consistent encoding
 from codecs import open
@@ -7,30 +7,24 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
-# Get the long description from the README file
-long_description = "see https://github.com/graham/python_xid for more info."
+with open("README.md", "r") as fh:
+    # Get the long description from the README file
+    long_description = fh.read()
 
-setup(
-    name='xid',
-
-    # Versions should comply with PEP440.  For a discussion on single-sourcing
-    # the version across setup.py and the project code, see
-    # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.0.5',
-
-    description='Python Xid Implementation',
+setuptools.setup(
+    name="xid-py",
+    version="1.1",
+    author="Darwin Smith II",
+    author_email="pythonxid@dwin.fastmail.com",
+    description="Python implementation of XID globally unique id generator",
     long_description=long_description,
-
-    # The project's main homepage.
-    url='https://github.com/graham/python_xid',
-
-    # Author details
-    author='Graham Abbott',
-    author_email='graham.abbott@gmail.com',
-
-    # Choose your license
-    license='MIT',
-
-    py_modules=['xid', 'base32hex'],
-    download_url="https://github.com/graham/python_xid/tarball/0.1",
+    long_description_content_type="text/markdown",
+    url="https://github.com/dwin/python_xid",
+    packages=setuptools.find_packages(),
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.5',
 )

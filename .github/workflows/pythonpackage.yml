@@ -28,7 +28,3 @@ jobs:
       run: |
         pip install pytest
         pytest
-    - name: Check coverage
-      run: |
-        which pip3 && pip3 install --upgrade coverage || pip install --upgrade coverage
-        coverage run --branch --omit *_test.py xid_test.py --verbose && coverage report -m --fail-under=90
