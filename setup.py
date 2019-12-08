@@ -13,7 +13,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="xid-py",
-    version="1.1.0",
+    version="1.1.1",
     author="Darwin Smith II",
     author_email="pythonxid@dwin.fastmail.com",
     description="Python implementation of XID globally unique id generator",
