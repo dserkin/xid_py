@@ -13,9 +13,10 @@ import base32hex
 
 # MyPy imports
 try:
-  from typing import List
-except:
-  pass # ignore, we do not need the typing module
+    from typing import List
+
+except ImportError:
+    pass  # ignore, we do not need the typing module
 
 # Some Constants
 trimLen = 20
@@ -23,14 +24,17 @@ encodedLen = 24
 decodedLen = 14
 rawLen = 12
 
+
 class InvalidXid(Exception):
     pass
+
 
 def randInt():
     # type: () -> int
     buf = str(os.urandom(3))
     buford = list(map(ord, buf))
     return buford[0] << 16 | buford[1] << 8 | buford[2]
+
 
 def realMachineID():
     # type: () -> List[int]
@@ -40,14 +44,16 @@ def realMachineID():
         hw.update(hostname.encode('utf-8'))
         val = str(hw.digest()[:3])
         return list(map(ord, val))
-    except:
+    except:  # NOQA
         buf = os.urandom(3)
         return list(map(ord, buf))
 
-## Module level items
+
+# Module level items
 pid = os.getpid()
 machineID = realMachineID()
 lock = threading.Lock()
+
 
 def generateNextId():
     id = randInt()
@@ -57,7 +63,9 @@ def generateNextId():
         id += 1
         yield new_id
 
+
 objectIDGenerator = generateNextId()
+
 
 def generate_new_xid():
     # type: () -> List[int]
@@ -85,7 +93,6 @@ def generate_new_xid():
     id[11] = (i) & 0xff
 
     return id
-
 
 
 class Xid(object):
@@ -126,7 +133,7 @@ class Xid(object):
 
     def bytes(self):
         # type: () -> str
-        return ''.join(map(chr, self.value))        
+        return ''.join(map(chr, self.value))
 
     def __repr__(self):
         return "<Xid '%s'>" % self.__str__()
@@ -135,11 +142,11 @@ class Xid(object):
         return self.string()
 
     def __lt__(self, arg):
-        # type: (Xid) -> bool        
+        # type: (Xid) -> bool
         return self.string() < arg.string()
 
     def __gt__(self, arg):
-        # type: (Xid) -> bool        
+        # type: (Xid) -> bool
         return self.string() > arg.string()
 
     @classmethod
@@ -150,5 +157,5 @@ class Xid(object):
 
         if not all(value_check):
             raise InvalidXid(s)
-        
+
         return cls(val)
