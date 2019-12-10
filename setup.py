@@ -12,14 +12,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="xid-py",
+    name="xid_py",
     version="1.1.2",
     author="Darwin Smith II",
     author_email="pythonxid@dwin.fastmail.com",
     description="Python implementation of XID globally unique id generator",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/dwin/xid-py",
+    url="https://github.com/dwin/xid_py",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
