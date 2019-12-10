@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="xid",
+    name="xid-py",
     version="1.1.2",
     author="Darwin Smith II",
     author_email="pythonxid@dwin.fastmail.com",
