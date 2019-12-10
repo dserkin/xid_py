@@ -67,7 +67,7 @@ References:
 ## Install
 
 ```bash
-pip3 install "xid-py"
+pip3 install "xid"
 ```
 ## Usage
 
