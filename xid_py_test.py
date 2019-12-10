@@ -1,6 +1,6 @@
 import unittest
 
-from xid import Xid
+from xid_py import Xid
 
 TestXids = [
     # taken from https://github.com/rs/xid/blob/master/id_test.go

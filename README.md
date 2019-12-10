@@ -72,7 +72,7 @@ pip3 install "xid"
 ## Usage
 
 ```python
-from xid import Xid
+from xid_py import Xid
 guid = Xid()
 
 print guid.string()
